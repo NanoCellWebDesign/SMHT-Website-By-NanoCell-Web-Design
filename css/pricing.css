@@ -1,0 +1,60 @@
+/* Pricing Section
+--------------------------------*/
+#pricing {
+  padding: 60px 0 60px 0;
+}
+
+#pricing .card {
+  height: 650px;
+  margin-bottom: 30px;
+  border: 2px solid #656;
+}
+
+#pricing .card img {
+  margin-bottom: 15px;
+}
+
+
+#pricing h3 {
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+#pricing ul {
+  padding: 0;
+  list-style: none;
+  color: #999;
+  line-height: 20px;
+}
+
+#pricing ul li {
+  padding-bottom: 12px;
+}
+
+#pricing ul i {
+  color: #104282;
+  font-size: 18px;
+  padding-right: 4px;
+}
+
+#pricing .get-started-btn {
+  width: auto;
+  background: #515e61;
+  display: inline-block;
+  padding: 6px 30px;
+  border-radius: 20px;
+  color: #fff;
+  transition: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+
+#pricing .featured {
+  border: 2px solid #50d8af;
+}
+
+#pricing .featured .get-started-btn {
+  background: #50d8af;
+}
