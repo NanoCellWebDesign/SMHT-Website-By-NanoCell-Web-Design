@@ -56,21 +56,21 @@
             }
             ?>
             <div class="col-12">
-            <h2 class="title-1">Add Event</h2>
+              <h2 class="title-1">Add Event</h2>
             </div>
             <?php
             echo '<div class="col-md-4">
             <div class="container-fluid">
-              <img style="width:100%; height:100%;" src="'.$_GET['img'].'" class="">
-              </div>
+            <img style="width:100%; height:100%;" src="'.$_GET['img'].'" class="">
+            </div>
             </div>';
 
             echo'<div class="col-md-8">
             <form action="php/addevent.inc.php" method="post">
             <div class="form-row">
             <div class="form-group col-md-6">
-              <label>Event Name</label>
-              <input name="evntName" type="text" class="form-control" id="" placeholder="Event Name">
+            <label>Event Name</label>
+            <input name="evntName" type="text" class="form-control" id="" placeholder="Event Name">
             </div>
             <div class="form-group col-md-6">
             <label>Event Image</label>
@@ -79,25 +79,25 @@
             </div>
 
             <div class="form-group">
-              <label>Event Description</label>
-              <textarea name="evntDsc" class="form-control" id="" placeholder="Event Description" rows="3"></textarea>
+            <label>Event Description</label>
+            <textarea name="evntDsc" class="form-control" id="" placeholder="Event Description" rows="3"></textarea>
             </div>
             <div class="form-row">
             <div class="form-group col-md-6">
-              <label>Event Cost</label>
-              <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">£</span>
-              </div>
-                <input name="evntCost" type="text" class="form-control" placeholder="Event Cost">
-              </div>
+            <label>Event Cost</label>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">£</span>
+            </div>
+            <input name="evntCost" type="text" class="form-control" placeholder="Event Cost">
+            </div>
             </div>
             <div class="form-group col-md-3">
-              <label for="exampleFormControlInput1">Event Date</label>
-              <input name="evntDate" type="text" class="form-control" id="datepicker" placeholder="Select...">
+            <label for="exampleFormControlInput1">Event Date</label>
+            <input name="evntDate" type="text" class="form-control" id="datepicker" placeholder="Select...">
             </div>
             <div class="form-group col-md-3">
-              <button style="margin-top:33px; width:100%;" class="btn btn-outline-primary" type="submit">Add Event</button>
+            <button style="margin-top:33px; width:100%;" class="btn btn-outline-primary" type="submit">Add Event</button>
             </div>
             </div>
             </form>';
@@ -128,7 +128,7 @@
                   $EventPrice = $row['Event_Price'];
                   $EventDate = $row['Event_Date'];
                   echo'<div class="col-3">
-                  <div class="card">
+                  <div class="card pointer open-BoxOfficeModalLink" data-toggle="modal" data-target="#mediumModal">
                   <img class="card-img-top" src="../'.$EventImg.'" alt="Image Not Found">
                   <div class="card-body">
                   <h5 class="card-title">'.$EventName.'</h5>
@@ -153,6 +153,37 @@
 </div>
 </div>
 <!-- END PAGE CONTAINER-->
+
+<!-- modal medium -->
+<div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <form action="php/boxofficeselection.php" method="get">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mediumModalLabel">Event Item</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">What do you want do with your event item?</label>
+            <select name="mo" type="text" class="form-control" id="exampleFormControlSelect1">
+              <option>Please Select</option>
+              <option>Edit</option>
+              <option>Delete</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- end modal medium -->
 
 </div>
 

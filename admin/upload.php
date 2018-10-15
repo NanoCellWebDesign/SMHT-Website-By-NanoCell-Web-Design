@@ -87,7 +87,7 @@
                   $ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
                   if (in_array($ext, $supported_format))
                   {
-                    echo'<div class="col-12 col-sm-6 col-md-6 col-lg-3 pointer open-AddBookDialog" data-id="'.$image_name.'" data-toggle="modal" data-target="#mediumModal">
+                    echo'<div class="col-12 col-sm-6 col-md-6 col-lg-3 pointer open-UploadModalLink" data-id="'.$image_name.'" data-toggle="modal" data-target="#mediumModal">
                     <div class="card">
                     <img class="card-img-top" src="'.$image_name.'" alt="'.$image_name.'">
                     <div class="card-footer">
@@ -108,7 +108,7 @@
   </div>
   <!-- END PAGE CONTAINER-->
 
-  <div class="modal hide" id="addBookDialog">
+  <div class="modal hide" id="UploadModalLink">
    <div class="modal-header">
       <button class="close" data-dismiss="modal">×</button>
       <h3>Modal header</h3>
