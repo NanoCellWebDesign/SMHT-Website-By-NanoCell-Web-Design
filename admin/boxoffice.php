@@ -33,7 +33,7 @@
 
   <!-- Main CSS-->
   <link href="css/theme.css" rel="stylesheet" media="all">
-  <link href="/css/admin.css" rel="stylesheet" media="all">
+  <link href="css/admin.css" rel="stylesheet" media="all">
 
 </head>
 
@@ -105,10 +105,6 @@
           </div>
         </div>
 
-        <br>
-        <br>
-        <br>
-
         <div class="row">
           <div class="col-12">
             <h2 class="title-1">Current Events</h2>
@@ -128,7 +124,7 @@
                   $EventPrice = $row['Event_Price'];
                   $EventDate = $row['Event_Date'];
                   echo'<div class="col-3">
-                  <div class="card pointer open-BoxOfficeModalLink" data-toggle="modal" data-target="#mediumModal">
+                  <div class="card pointer open-BoxOfficeModalLink" data-id="'.$EventId.'" data-toggle="modal" data-target="#mediumModal">
                   <img class="card-img-top" src="../'.$EventImg.'" alt="Image Not Found">
                   <div class="card-body">
                   <h5 class="card-title">'.$EventName.'</h5>
@@ -158,7 +154,7 @@
 <div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <form action="php/boxofficeselection.php" method="get">
+      <form action="php/boxofficeselection.php" method="post">
         <div class="modal-header">
           <h5 class="modal-title" id="mediumModalLabel">Event Item</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -168,6 +164,7 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="exampleFormControlSelect1">What do you want do with your event item?</label>
+            <input id="eventText" type="hidden" name="event" class="eventText">
             <select name="mo" type="text" class="form-control" id="exampleFormControlSelect1">
               <option>Please Select</option>
               <option>Edit</option>
@@ -177,7 +174,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary">Confirm</button>
+          <button type="submit" class="btn btn-primary">Confirm</button>
         </div>
       </form>
     </div>
@@ -210,6 +207,7 @@
 
 <!-- Main JS-->
 <script src="js/main.js"></script>
+<script src="js/custom.js"></script>
 <script>
 $( function() {
   $( "#datepicker" ).datepicker();

@@ -33,7 +33,7 @@
 
   <!-- Main CSS-->
   <link href="css/theme.css" rel="stylesheet" media="all">
-  <link href="/css/admin.css" rel="stylesheet" media="all">
+  <link href="css/admin.css" rel="stylesheet" media="all">
 
 </head>
 

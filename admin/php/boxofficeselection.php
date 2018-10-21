@@ -1,16 +1,29 @@
 <?php
-$option = $_GET['mo'];
-$event = $_GET['event'];
+$option = $_POST['mo'];
+$event = $_POST['event'];
+include_once '../../php/db_conn.inc.php';
 
 if ($option === "Edit"){
-die;
+  die;
 }
 if ($option === "Delete"){
 
+  if($conn === false){
+      die("ERROR: Could not connect. " . mysqli_connect_error());
+  }
+
+  $sql = "DELETE FROM boxoffice WHERE Event_Id = '$event'";
+  if(mysqli_query($conn, $sql)){
+      echo "Record was deleted successfully.";
+  }
+  else{
+      echo "ERROR: Could not able to execute $sql. "
+                                     . mysqli_error($conn);
+  }
+  mysqli_close($conn);
+
+
+
 die;
 }
-header('Location: ../upload.php');
 ?>
-
-
-Make delete and edit options for boxoffice items
